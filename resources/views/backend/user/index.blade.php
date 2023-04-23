@@ -74,7 +74,7 @@
                                 </td>
                                 <td class="d-flex ">
                                     
-                                    <a href="{{ route('user.show', $user->slug) }}" class="btn btn-sm btn-info text-white me-1 editBarang" data-id="{{ $user->id }}">
+                                    <a href="{{ route('user.show', $user->slug) }}" class="btn btn-sm btn-info text-white me-1" data-id="{{ $user->id }}">
                                         <i class="bi bi-eye"></i>
                                     </a>
                                     <form method="POST" action="#" class="me-1">
@@ -86,11 +86,11 @@
                                         </button>
                                     </form>
 
-                                    <a href="#" class="btn btn-sm btn-warning text-white me-1 editBarang" data-id="{{ $user->id }}">
+                                    <a href="{{ route('user.edit', $user->slug) }}" class="btn btn-sm btn-warning text-white me-1 " data-id="{{ $user->id }}">
                                         <i class="bi bi-pencil-square"></i>
                                     </a>
 
-                                    <form method="POST" action="#">
+                                    <form method="POST" action="{{ route('user.delete', $user->slug) }}">
                                         @csrf
                                         <input name="_method" type="hidden" value="DELETE">
                                         <input type="hidden" id="user_id" value="{{ $user->id }}" >

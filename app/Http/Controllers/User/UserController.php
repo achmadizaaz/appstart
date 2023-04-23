@@ -164,6 +164,12 @@ class UserController extends Controller
 
     }
 
+    public function destroy(User $user)
+    {
+        $user->delete();
+
+        return redirect()->route('user.index')->with('success', 'Data has been deleted');
+    }
 
 
 }

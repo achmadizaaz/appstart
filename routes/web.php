@@ -38,6 +38,7 @@ Route::prefix('dashboard/')->middleware(['auth'])->group(function () {
         Route::get('/{user:slug}', 'show')->name('user.show');
         Route::get('/{user:slug}/edit', 'edit')->name('user.edit');
         Route::put('/{user:slug}/update', 'update')->name('user.update');
+        Route::delete('/{user:slug}/destroy', 'destroy')->name('user.delete');
     });
 
 });

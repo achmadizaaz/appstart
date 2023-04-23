@@ -25,25 +25,6 @@
  @endif
 {{-- end sweetalert success --}}
 
-     <!-- start page title -->
-    {{-- <div class="row mb-2">
-        <div class="col-12">
-            <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                <h4 class="mb-sm-0 fw-bold">DETAIL USER: {{$user->name}}</h4>
-
-                Breadcrumb
-                <div class="page-title-right">
-                    <!-- Button trigger modal -->
-                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#tambahModal">
-                        Tambah
-                    </button>
-                </div> 
-
-            </div>
-        </div>
-    </div> --}}
-    <!-- end page title -->
-
      <!-- Content row -->
      <div class="row mb-4">
         <div class="col-12">
@@ -119,7 +100,7 @@
                         <i class="bi bi-pencil-square"></i> Edit
                     </a>
 
-                        <form method="POST" action="#" class="me-2">
+                        <form method="POST" action="{{ route('user.delete', $user->slug) }}" class="me-2">
                             @csrf
                             <input name="_method" type="hidden" value="DELETE">
                             <input type="hidden" id="kode_inventaris" value="{{ $user->id }}" >
