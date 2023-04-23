@@ -1,0 +1,64 @@
+.container {
+    margin-bottom: 20px;
+}
+
+.user-heading {
+    margin-bottom: 10px;
+}
+
+.user-heading h4 {
+    color: #333;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 5px;
+}
+
+.user-thumbnail {
+
+}
+
+.user-info {
+    position: relative;
+    margin: 15px auto;
+}
+
+.user-info .title {
+    font-weight: 600;
+}
+
+.user-info .description {
+    color: #444;
+}
+
+
+.information-heading {
+    margin-bottom: 10px;
+}
+
+.information-heading h4 {
+    color: #333;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 5px;
+}
+
+.information-content .row {
+    margin-bottom: 15px;
+}
+
+
+
+.social-heading {
+    margin-bottom: 10px;
+}
+
+.social-heading h4 {
+    color: #333;
+    font-size: 18px;
+    font-weight: 500;
+    padding: 5px;
+}
+
+.social-content .row {
+    margin-bottom: 15px;
+}
