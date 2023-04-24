@@ -164,6 +164,19 @@ class UserController extends Controller
 
     }
 
+    public function resetPassword(User $user)
+    {
+        // Check Password Default
+        if($user->password_default){
+            $user->password = Hash::make($user->password_default);
+            $user->update();
+
+            return back()->with('success', 'Reset password has been complete');
+        }else{
+            return back()->with('failed', 'Cant reset password, because password default not found');
+        }
+    }
+
     public function destroy(User $user)
     {
         $user->delete();

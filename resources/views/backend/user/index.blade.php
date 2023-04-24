@@ -18,6 +18,22 @@
     });
   </script>   
  @endif
+
+ @if (session('failed'))
+<script>
+    let sessionFailed = "{{ session('failed') }}"
+    $(document).ready(function () {
+        Swal.fire({
+            icon: 'error',
+            title: 'Failed',
+            text: sessionFailed,
+            showConfirmButton: true,
+            confirmButtonColor: '#7367f0',
+            timer: 2000
+        })
+    });
+  </script>   
+ @endif
 {{-- end sweetalert success --}}
 
      <!-- start page title -->
@@ -77,7 +93,7 @@
                                     <a href="{{ route('user.show', $user->slug) }}" class="btn btn-sm btn-info text-white me-1" data-id="{{ $user->id }}">
                                         <i class="bi bi-eye"></i>
                                     </a>
-                                    <form method="POST" action="#" class="me-1">
+                                    <form method="POST" action="{{ route('user.reset.password', $user->slug) }}" class="me-1">
                                         @csrf
                                         <input name="_method" type="hidden" value="PUT">
                                         <input type="hidden" id="user_id" value="{{ $user->id }}" >
