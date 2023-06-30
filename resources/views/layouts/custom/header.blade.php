@@ -22,7 +22,7 @@
             <!-- App Search-->
             
             <div class="d-flex align-items-center fs-5 fw-bold">
-                {{ date('d M Y') }}
+                APP START
             </div>
 
         </div>
@@ -127,7 +127,7 @@
                 </button>
                 <div class="dropdown-menu dropdown-menu-end">
                     <!-- item-->
-                    <a class="dropdown-item" href="#">
+                    <a class="dropdown-item" href="{{ route('profile.index') }}">
                         <i class="ri-user-line align-middle me-1"></i> Profile
                     </a>
                   

@@ -42,7 +42,6 @@
             <div class="page-title-box d-sm-flex align-items-center justify-content-between">
                 <h4 class="mb-sm-0 fw-bold">USER LIST</h4>
 
-                {{-- Breadcrumb --}}
                 <div class="page-title-right">
                     <!-- Button trigger modal -->
                     <a href="{{ route('user.create') }}" class="btn btn-primary">
@@ -90,19 +89,19 @@
                                 </td>
                                 <td class="d-flex ">
                                     
-                                    <a href="{{ route('user.show', $user->slug) }}" class="btn btn-sm btn-info text-white me-1" data-id="{{ $user->id }}">
+                                    <a href="{{ route('user.show', $user->slug) }}" class="btn btn-sm btn-info text-white me-1" data-id="{{ $user->id }}" title="Show Detail">
                                         <i class="bi bi-eye"></i>
                                     </a>
                                     <form method="POST" action="{{ route('user.reset.password', $user->slug) }}" class="me-1">
                                         @csrf
                                         <input name="_method" type="hidden" value="PUT">
                                         <input type="hidden" id="user_id" value="{{ $user->id }}" >
-                                        <button type="submit" class="btn btn-sm btn-success btn-flat reset_confirm" data-name="{{ $user->name }}" title="Hapus">
+                                        <button type="submit" class="btn btn-sm btn-success btn-flat reset_confirm" data-name="{{ $user->name }}" title="Reset Password">
                                             <i class="bi bi-shield-lock"></i>
                                         </button>
                                     </form>
 
-                                    <a href="{{ route('user.edit', $user->slug) }}" class="btn btn-sm btn-warning text-white me-1 " data-id="{{ $user->id }}">
+                                    <a href="{{ route('user.edit', $user->slug) }}" class="btn btn-sm btn-warning text-white me-1 " data-id="{{ $user->id }}" title="Edit User">
                                         <i class="bi bi-pencil-square"></i>
                                     </a>
 

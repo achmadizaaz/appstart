@@ -103,7 +103,13 @@ class UserController extends Controller
     {
         // dd($request);
         
-        $pathImage = null;
+        // Check Image User
+        if($user->image){
+            $pathImage = $user->image;
+        }else{
+            $pathImage = null;
+        }
+
         $user->slug = null;
         $removeImg = $user->image;
 

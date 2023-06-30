@@ -194,7 +194,7 @@
                                     Birth Date <small class="text-danger">*</small>
                                 </div>
                                 <div class="col-md-8">
-                                <input type="date" name="birth" class="form-control @error('birth') is-invalid @enderror" value="{{ old("birth") }}">
+                                <input type="date" name="birth" class="form-control @error('birth') is-invalid @enderror" value="{{ old("birth") }}" id="birth">
                                     @error('birth')
                                         <small class="text-danger fst-italic">{{ $message }}</small>
                                     @enderror
@@ -301,8 +301,21 @@
 
 @section('scripts')
     <script>
+        // Get Today Input Filed Date
+        // $(document).ready( function() {
+        //     let now = new Date();
+        //     let month = (now.getMonth() + 1);               
+        //     let day = now.getDate();
+        //     if (month < 10) 
+        //         month = "0" + month;
+        //     if (day < 10) 
+        //         day = "0" + day;
+        //     let today = now.getFullYear() + '-' + month + '-' + day;
+        //     $('#birth').val(today);
+        // });
+
+        // document.getElementById("birth").defaultValue = new date();
         $(document).ready(function() {
-                
             // SELECT2
             $('.select2').select2({
                 theme: 'bootstrap-5',

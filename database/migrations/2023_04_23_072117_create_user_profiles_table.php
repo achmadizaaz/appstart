@@ -19,6 +19,7 @@ class CreateUserProfilesTable extends Migration
             $table->date('birth');
             $table->string('phone')->nullable();
             $table->boolean('gender');
+            $table->string('website')->nullable();
             $table->string('address')->nullable();
             $table->timestamps();
 

@@ -28,12 +28,6 @@ class RolePermissionSeeder extends Seeder
         // Reset cached roles and permissions
         app()[\Spatie\Permission\PermissionRegistrar::class]->forgetCachedPermissions();
 
-        // Hak akses modul user
-        Permission::create(['name' => 'create user']);
-        Permission::create(['name' => 'read user']);
-        Permission::create(['name' => 'update user']);
-        Permission::create(['name' => 'delete user']);
-
         // create roles and assign created permissions        
         $role = Role::create(['name' => 'super-administrator']);
         $role->givePermissionTo(Permission::all());
@@ -41,14 +35,14 @@ class RolePermissionSeeder extends Seeder
         // Role Administrator
         $role1 = Role::create(['name' => 'administrator']);
         // Hak Akses User - Administrator
-        $role1->givePermissionTo('create user');
-        $role1->givePermissionTo('read user');
-        $role1->givePermissionTo('update user');
-        $role1->givePermissionTo('delete user');
+        $role1->givePermissionTo('create user-administrasi');
+        $role1->givePermissionTo('read user-administrasi');
+        $role1->givePermissionTo('update user-administrasi');
+        $role1->givePermissionTo('delete user-administrasi');
 
         // Role Unit
         $role2 = Role::create(['name' => 'unit']);
-        $role2->givePermissionTo('read user');
+        $role2->givePermissionTo('read user-administrasi');
 
         // Create Akun User
         $defaultUser = [
